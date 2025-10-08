@@ -1,0 +1,228 @@
+/* Reset and base styles */
+body, h1, form, label, input, button, p, a, ul, li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 30px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/* Page title */
+h1 {
+  color: #007acc;
+  font-weight: 700;
+  margin-bottom: 25px;
+  user-select: none;
+}
+
+/* Search form */
+form {
+  margin-bottom: 25px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+form input[type="text"] {
+  flex: 1;
+  min-width: 180px;
+  padding: 12px 14px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1.8px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus {
+  outline: none;
+  border-color: #005a9e;
+  box-shadow: 0 0 8px rgba(0, 90, 158, 0.3);
+}
+
+form button {
+  background-color: #007acc;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover,
+form button:focus {
+  background-color: #005a9e;
+  outline: none;
+}
+
+/* Error message */
+p[style*="color: red"] {
+  color: #a70000;
+  font-weight: 600;
+  margin-bottom: 20px;
+  user-select: none;
+}
+
+/* No bookmarks message */
+p {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+/* Bookmark list */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  background: white;
+  padding: 20px 25px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  user-select: none;
+}
+
+/* Labels */
+label {
+  font-weight: 600;
+  color: #007acc;
+  user-select: none;
+}
+
+/* Title input */
+li input[type="text"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.8px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f0f0f0;
+  pointer-events: none; /* readonly visually */
+}
+
+/* URL link */
+li a[href^="http"] {
+  color: #007acc;
+  font-weight: 600;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+/* Updated hover/focus: keep original color, no underline */
+li a[href^="http"]:hover,
+li a[href^="http"]:focus {
+  color: ghostwhite;
+  text-decoration: none;
+  outline: none;
+}
+
+/* Date styling */
+li small {
+  color: #666;
+  font-size: 0.85rem;
+  user-select: none;
+}
+
+/* Actions */
+li > a,
+li form button {
+  display: inline-block;
+  font-weight: 700;
+  color: #007acc;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  white-space: nowrap;
+  margin-top: 10px;
+}
+
+li > a:hover,
+li > a:focus,
+li form button:hover,
+li form button:focus {
+  background-color: #005a9e;
+  color: white;
+  outline: none;
+}
+
+/* Inline form styling */
+li form {
+  display: inline;
+}
+
+/* Pagination */
+div {
+  margin-top: 30px;
+  text-align: center;
+  font-weight: 600;
+}
+
+div p {
+  margin-bottom: 10px;
+}
+
+div a {
+  color: #007acc;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  margin: 0 8px;
+  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+div a:hover,
+div a:focus {
+  background-color: #005a9e;
+  color: white;
+  outline: none;
+}
+
+/* Add new bookmark link */
+p a {
+  color: #007acc;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 25px;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+p a:hover,
+p a:focus {
+  color: #005a9e;
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  li {
+    padding: 15px 20px;
+  }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Bookmark</title>
+    <link rel="stylesheet" href="/stylesheets/edit.css">
+
+</head>
+<body>
+  <h1>Edit Bookmark</h1>
+
+  <% if (error) { %>
+    <p style="color: red;"><%= error %></p>
+  <% } %>
+
+  <form action="/bookmark/<%= bookmark._id %>/edit" method="POST">
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name="title" required value="<%= bookmark.title %>"><br><br>
+
+    <label for="url">URL:</label><br>
+    <input type="url" id="url" name="url" required value="<%= bookmark.url %>"><br><br>
+
+    <button type="submit">Update Bookmark</button>
+  </form>
+
+  <p><a href="/bookmark/list">Back to list</a></p>
+</body>
+</html>

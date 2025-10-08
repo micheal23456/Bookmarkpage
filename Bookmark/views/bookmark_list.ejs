@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bookmark List</title>
+    <link rel="stylesheet" href="/stylesheets/list.css">
+
+</head>
+<body>
+  <h1>Your Bookmarks</h1>
+
+  <form method="GET" action="/bookmark/list">
+    <input type="text" name="search" value="<%= search %>" placeholder="Search title or URL">
+    <button type="submit">Search</button>
+  </form>
+
+  <% if (error) { %>
+    <p style="color: red;"><%= error %></p>
+  <% } %>
+
+  <% if (bookmarks.length === 0) { %>
+    <p>No bookmarks found.</p>
+  <% } else { %>
+    <ul>
+      <% bookmarks.forEach(function(bookmark) { %>
+       <li>
+  <label for="title">Title:</label><br>
+  <input type="text" id="title" name="title" required value="<%= bookmark.title %>">
+
+  <label for="url">URL:</label><br>
+  <a href="<%= bookmark.url %>" target="_blank" rel="noopener noreferrer"><%= bookmark.url %></a>
+  <small>(added <%= bookmark.createdAt.toDateString() %>)</small>
+
+  <br><br>
+
+  <a href="/bookmark/<%= bookmark._id %>/edit">Edit</a> |
+  <form action="/bookmark/<%= bookmark._id %>/delete" method="POST" style="display:inline;">
+    <button type="submit" onclick="return confirm('Delete this bookmark?');">Delete</button>
+  </form>
+</li>
+
+      <% }); %>
+    </ul>
+  <% } %>
+
+  <div>
+    <p>Page <%= page %> of <%= totalPages %></p>
+    <% if (page > 1) { %>
+      <a href="/bookmark/list?page=<%= page - 1 %>&search=<%= encodeURIComponent(search) %>">Prev</a>
+    <% } %>
+    <% if (page < totalPages) { %>
+      <a href="/bookmark/list?page=<%= page + 1 %>&search=<%= encodeURIComponent(search) %>">Next</a>
+    <% } %>
+  </div>
+
+  <p><a href="/bookmark/add">Add new bookmark</a></p>
+</body>
+</html>

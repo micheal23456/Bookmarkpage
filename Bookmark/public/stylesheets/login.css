@@ -1,0 +1,112 @@
+/* Reset and base styling */
+body, h1, p, form, label, input, ul, li, div {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.login {
+  background: white;
+  padding: 30px 35px;
+  border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #007acc;
+}
+
+.login label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #007acc;
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.login input[type="text"]:focus,
+.login input[type="password"]:focus {
+  border-color: #005a9e;
+  outline: none;
+}
+
+.login input[type="submit"] {
+  background-color: #007acc;
+  color: white;
+  border: none;
+  padding: 12px 0;
+  width: 100%;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.login input[type="submit"]:hover {
+  background-color: #005a9e;
+}
+
+.login p {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.login p a {
+  color: #007acc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login p a:hover {
+  text-decoration: underline;
+}
+
+/* Error messages styling */
+.error-messages {
+  background-color: #ffdddd;
+  border: 1px solid #ff5c5c;
+  color: #a70000;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.error-messages ul {
+  list-style: disc inside;
+}
+
+@media (max-width: 450px) {
+  .login {
+    padding: 20px;
+    margin: 10px;
+  }
+}

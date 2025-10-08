@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <header>
+    <div class="waterzone">
+      <h1 class="you">🔖 Personal Bookmark Manager</h1>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="/signup">Sign Up</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/bookmark/add">Add Bookmark</a></li>
+        <li><a href="/bookmark/list">Bookmark List</a></li>
+        <% if (email) { %>
+          <li>
+            <form action="/logout" style="display:inline;">
+              <button type="submit" class="logout-btn">Logout</button>
+            </form>
+          </li>
+        <% } %>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Welcome to Your Personal Bookmark Manager</h1>
+    <p>
+      This web app helps you save, organize, and access your favorite URLs quickly and easily.
+      Keep your important links in one place, searchable and manageable with editing capabilities.
+      Sign up now to start building your personalized collection of bookmarks.
+    </p>
+
+    <section class="featured">
+      <h2>Key Features</h2>
+      <ul class="feature-list">
+        <li>
+          <h3>Easy Bookmarking</h3>
+          <p>Add URLs with titles to keep track of websites you love or need to revisit.</p>
+        </li>
+        <li>
+          <h3>Organize & Search</h3>
+          <p>View your bookmarks in a paginated list with a search option to quickly find titles or URLs.</p>
+        </li>
+        <li>
+          <h3>Edit & Manage</h3>
+          <p>Modify or delete bookmarks whenever you want. Keep your collection up to date.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="about">
+      <h2>Why Use a Bookmark Manager?</h2>
+      <p>Stop losing important links in browser clutter or forgetting useful resources.
+      A personal bookmark manager keeps everything neat, accessible, and under your control.</p>
+      <p>Join today and experience hassle-free web browsing by saving your favorite sites with ease!</p>
+    </section>
+  </main>
+</body>
+</html>
